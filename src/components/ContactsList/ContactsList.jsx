@@ -1,32 +1,39 @@
-import './ContactsList.css';
 import PropTypes from 'prop-types';
 
-export const ContactsList = ({ contacts, filter, deleteContact }) => {
-  const filteredArray = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+import s from './ContactsList.module.css';
 
+export const ContactsList = ({ contacts, children, deleteContact }) => {
   return (
-    <ul className="contacts">
-      {filteredArray.map(({ id, name, number }) => (
-        <li key={id} className="contacts__item">
-          <p className="contacts__name"> {name} </p>
-          <p className="contacts__number">{number} </p>
-
-          <button
-            className="contacts__button"
-            type="button"
-            onClick={() => deleteContact(id)}
-          >
-            Delete Contact
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className={s.contacts}>
+      <h2>Contacts</h2>
+      {children}
+      <ul className={s.contacts__list}>
+        {contacts.map(({ id, name, number }) => (
+          <li className={s.contacts__item} key={id}>
+            <p className={s.contacts__name}>{name}</p>
+            <p className={s.contacts__number}> {number}</p>
+            <button
+              onClick={() => {
+                deleteContact(id);
+              }}
+              className={s.contacts__btn}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
 ContactsList.propTypes = {
-  filteredArray: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  deleteContact: PropTypes.func,
 };

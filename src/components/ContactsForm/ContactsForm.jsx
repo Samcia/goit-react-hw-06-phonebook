@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
-import s from '../ContactsForm/ContactsForm.module.css';
+import s from './ContactsForm.module.css';
 
 export class ContactsForm extends Component {
   handleFormSubmit = event => {

@@ -1,20 +1,27 @@
+import { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Filter.css';
 
-export const Filter = ({ filterContacts }) => {
-  return (
-    <div className="filter">
-      <p>Find contacts by name</p>
-      <input
-        className="filter__input"
-        type="text"
-        onChange={filterContacts}
-        placeholder="Contact name"
-      ></input>
-    </div>
-  );
-};
+import s from './Filter.module.css';
+
+export class Filter extends Component {
+  render() {
+    const { filter, addFilter } = this.props;
+    return (
+      <div className={s.filter}>
+        <input
+          type="text"
+          name="filter"
+          className={s.filter__input}
+          value={filter}
+          onChange={addFilter}
+          placeholder="Enter name"
+        />
+      </div>
+    );
+  }
+}
 
 Filter.propTypes = {
-  filterContacts: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  addFilter: PropTypes.func,
 };
