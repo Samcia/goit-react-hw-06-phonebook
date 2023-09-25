@@ -1,5 +1,5 @@
 # React HW4 Phonebook
 
-Build new Phonebook with Hooks
+New Phonebook with Hooks also trying work with module and class comps
 
 https://samcia.github.io/goit-react-hw-04-phonebook/
