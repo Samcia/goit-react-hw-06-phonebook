@@ -1,3 +1,5 @@
 # React HW4 Phonebook
 
-Refracting Phonebook homework using Hooks
+Build new Phonebook with Hooks
+
+https://samcia.github.io/goit-react-hw-04-phonebook/
