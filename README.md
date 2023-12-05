@@ -1,5 +1,5 @@
-# React HW4 Phonebook
+# React HW6 Phonebook
 
-New Phonebook with Hooks also trying work with module and class comps
+Phonebook made using React Hooks with Redux
 
-https://samcia.github.io/goit-react-hw-04-phonebook/
+https://samcia.github.io/goit-react-hw-06-phonebook/
