@@ -1,4 +1,4 @@
-# React HW6 Phonebook
+# React Phonebook with Redux library
 
 Phonebook made with using React Redux
 
