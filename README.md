@@ -1,4 +1,4 @@
-# React Phonebook with Redux library
+# React Phonebook with Redux 
 
 Phonebook made with using React Redux
 
